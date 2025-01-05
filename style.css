@@ -18,42 +18,78 @@ body {
 }
 
 /* 导航栏样式 */
-header {
+.fixed-header {
     position: fixed;
-    width: 100%;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
+    left: 0;
+    width: 100%;
+    background: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     z-index: 1000;
 }
 
-nav {
+.tab-nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.5rem 2rem;
 }
 
-nav ul {
+.logo {
+    flex: 0 0 auto;
+}
+
+.logo img {
+    height: 40px;
+    width: auto;
+}
+
+.tabs {
     display: flex;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 1rem;
 }
 
-nav ul li a {
+.tabs li {
+    position: relative;
+}
+
+.tabs li a {
+    display: block;
+    padding: 1rem 1.5rem;
     color: #333;
     text-decoration: none;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s;
+    transition: all 0.3s ease;
 }
 
-nav ul li a:hover {
+.tabs li.active a,
+.tabs li a:hover {
     color: #007bff;
+}
+
+.tabs li.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #007bff;
+}
+
+/* 内容区域调整 */
+.content {
+    padding-top: 60px; /* 为固定导航腾出空间 */
 }
 
 /* Banner部分 */
 #home {
-    height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/banner.jpg');
+    height: calc(100vh - 60px);
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/banner.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -61,6 +97,7 @@ nav ul li a:hover {
     justify-content: center;
     text-align: center;
     color: white;
+    margin-top: 60px; /* 为固定导航腾出空间 */
 }
 
 .banner h1 {
@@ -200,5 +237,136 @@ footer {
     
     .banner h1 {
         font-size: 2.5rem;
+    }
+}
+
+/* 通用部分 */
+.section-padding {
+    padding: 5rem 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+}
+
+/* 特色服务部分 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card i {
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* 目的地部分 */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.destination-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.destination-card:hover img {
+    transform: scale(1.1);
+}
+
+.destination-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+}
+
+.price {
+    display: inline-block;
+    background: #007bff;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-top: 1rem;
+}
+
+/* 客户评价部分 */
+.testimonials-slider {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+}
+
+.quote {
+    font-style: italic;
+    color: #666;
+    margin: 1rem 0;
+}
+
+.stars {
+    color: #ffd700;
+    margin-top: 0.5rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .features-grid,
+    .destinations-grid {
+        grid-template-columns: 1fr;
     }
 }
