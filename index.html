@@ -14,11 +14,36 @@
                 <img src="images/logo.png" alt="旅游网站标志">
             </div>
             <ul class="tabs">
-                <li class="active"><a href="#home">首页</a></li>
-                <li><a href="#about">关于我们</a></li>
-                <li><a href="#projects">项目介绍</a></li>
-                <li><a href="#testimonials">客户评价</a></li>
-                <li><a href="#contact">联系我们</a></li>
+                <li class="active">
+                    <a href="#home">
+                        <i class="fas fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#about">
+                        <i class="fas fa-info-circle"></i>
+                        <span>关于我们</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#projects">
+                        <i class="fas fa-project-diagram"></i>
+                        <span>项目介绍</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#testimonials">
+                        <i class="fas fa-comments"></i>
+                        <span>客户评价</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <i class="fas fa-envelope"></i>
+                        <span>联系我们</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -186,5 +211,34 @@
             <p>&copy; 2024 定制旅游项目. 保留所有权利</p>
         </div>
     </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 获取所有section和导航链接
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.tabs li a');
+
+        // 监听滚动事件
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (pageYOffset >= sectionTop - 150) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            // 更新活动标签
+            navLinks.forEach(link => {
+                link.parentElement.classList.remove('active');
+                if (link.getAttribute('href').substring(1) === current) {
+                    link.parentElement.classList.add('active');
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>

@@ -23,22 +23,28 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('./images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     z-index: 1000;
+    padding: 1rem 0;
 }
 
 .tab-nav {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0.5rem 2rem;
+    padding: 0.5rem;
 }
 
 .logo {
-    flex: 0 0 auto;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
 }
 
 .logo img {
@@ -48,47 +54,60 @@ body {
 
 .tabs {
     display: flex;
+    width: 100%;
+    max-width: 1000px;
     list-style: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
-    gap: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    backdrop-filter: blur(5px);
 }
 
 .tabs li {
+    flex: 1;
     position: relative;
 }
 
 .tabs li a {
-    display: block;
-    padding: 1rem 1.5rem;
-    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.2rem 1rem;
+    color: white;
     text-decoration: none;
     transition: all 0.3s ease;
+    background: transparent;
+    font-weight: 500;
 }
 
-.tabs li.active a,
-.tabs li a:hover {
-    color: #007bff;
+.tabs li a i {
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
 }
 
-.tabs li.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #007bff;
+.tabs li.active a {
+    background: rgba(0, 123, 255, 0.9);
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.3);
+}
+
+.tabs li:hover a {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.tabs li.active:hover a {
+    background: rgba(0, 86, 179, 0.8);
 }
 
 /* 内容区域调整 */
 .content {
-    padding-top: 60px; /* 为固定导航腾出空间 */
+    padding-top: 0;
 }
 
 /* Banner部分 */
 #home {
-    height: calc(100vh - 60px);
+    height: 100vh;
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/banner.jpg');
     background-size: cover;
     background-position: center;
@@ -97,7 +116,7 @@ body {
     justify-content: center;
     text-align: center;
     color: white;
-    margin-top: 60px; /* 为固定导航腾出空间 */
+    margin-top: 0;
 }
 
 .banner h1 {
@@ -238,11 +257,39 @@ footer {
     .banner h1 {
         font-size: 2.5rem;
     }
+
+    .tab-nav {
+        padding: 0.5rem;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+    }
+
+    .tabs li {
+        flex: 1 1 50%;
+    }
+
+    .tabs li a {
+        padding: 1rem 0.5rem;
+    }
+
+    .tabs li a i {
+        font-size: 1.2rem;
+    }
+
+    .tabs li a span {
+        font-size: 0.9rem;
+    }
+
+    .content {
+        padding-top: 180px;
+    }
 }
 
 /* 通用部分 */
 .section-padding {
-    padding: 5rem 0;
+    padding: 6rem 0;
 }
 
 .section-title {
@@ -369,4 +416,56 @@ footer {
     .destinations-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* 添加滚动监听样式 */
+.tabs li a.active {
+    color: #fff;
+    background: #007bff;
+}
+
+/* 添加平滑滚动 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 添加动画效果 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.banner h1,
+.banner p,
+.banner .btn {
+    animation: fadeIn 1s ease-out forwards;
+}
+
+.banner p {
+    animation-delay: 0.3s;
+}
+
+.banner .btn {
+    animation-delay: 0.6s;
+}
+
+.tabs li a {
+    position: relative;
+    overflow: hidden;
+}
+
+.tabs li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.tabs li:hover a::after {
+    width: 100%;
 }
