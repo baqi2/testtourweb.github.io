@@ -27,21 +27,21 @@ body {
     background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('images/banner.jpg');
     background-size: cover;
     background-position: center top;
-    padding: 0;
 }
 
 .tab-nav {
     display: flex;
-    flex-direction: column;
     align-items: center;
     width: 100%;
-    background: rgba(44, 62, 80, 0.9); /* 半透明背景 */
+    background: rgba(44, 62, 80, 0.9);
+    padding: 0.5rem;
 }
 
 .logo {
+    width: 200px;
     padding: 0.5rem;
+    margin-right: 2rem;
     background: rgba(255, 255, 255, 0.95);
-    width: 100%;
     text-align: center;
 }
 
@@ -50,50 +50,49 @@ body {
     width: auto;
 }
 
-/* 标签页样式 */
+/* 标签页样式 - 修改为横向排列 */
 .tabs {
     display: flex;
-    width: 100%;
+    flex-direction: row; /* 确保横向排列 */
+    flex: 1;
     list-style: none;
     margin: 0;
     padding: 0;
+    gap: 2px; /* 标签之间的间隔 */
 }
 
 .tabs li {
     flex: 1;
     text-align: center;
-    position: relative;
-    overflow: hidden;
 }
 
 .tabs li a {
     display: flex;
-    flex-direction: column;
+    flex-direction: row; /* 图标和文字横向排列 */
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     color: white;
     text-decoration: none;
     transition: all 0.3s ease;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* 半透明背景 */
 }
 
 /* 为每个标签设置不同的背景色 */
-.tabs li:nth-child(1) a { background: rgba(52, 152, 219, 0.8); }
-.tabs li:nth-child(2) a { background: rgba(231, 76, 60, 0.8); }
-.tabs li:nth-child(3) a { background: rgba(46, 204, 113, 0.8); }
-.tabs li:nth-child(4) a { background: rgba(241, 196, 15, 0.8); }
-.tabs li:nth-child(5) a { background: rgba(155, 89, 182, 0.8); }
+.tabs li:nth-child(1) a { background: rgba(52, 152, 219, 0.9); }
+.tabs li:nth-child(2) a { background: rgba(231, 76, 60, 0.9); }
+.tabs li:nth-child(3) a { background: rgba(46, 204, 113, 0.9); }
+.tabs li:nth-child(4) a { background: rgba(241, 196, 15, 0.9); }
+.tabs li:nth-child(5) a { background: rgba(155, 89, 182, 0.9); }
 
 .tabs li a i {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    margin-right: 0.5rem; /* 图标和文字的间距 */
+    margin-bottom: 0; /* 移除之前的底部间距 */
 }
 
 .tabs li:hover a {
     filter: brightness(1.2);
-    transform: translateY(-3px);
 }
 
 .tabs li.active a {
@@ -101,22 +100,30 @@ body {
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
-/* 添加底部边框效果 */
-.tabs li::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    width: 0;
-    height: 3px;
-    background: rgba(255, 255, 255, 0.8);
-    transition: all 0.3s ease;
-    transform: translateX(-50%);
-}
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .tab-nav {
+        flex-direction: column;
+    }
 
-.tabs li:hover::after,
-.tabs li.active::after {
-    width: 100%;
+    .logo {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+
+    .tabs {
+        width: 100%;
+    }
+
+    .tabs li a {
+        padding: 0.8rem 0.3rem;
+        font-size: 0.9rem;
+    }
+
+    .tabs li a i {
+        font-size: 1rem;
+    }
 }
 
 /* Banner部分 */
@@ -129,7 +136,7 @@ body {
 .banner {
     height: 100%;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/banner.jpg');
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/banner.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -178,32 +185,4 @@ body {
 /* 内容区域调整 */
 .content {
     padding-top: 100px; /* 为固定导航腾出空间 */
-}
-
-/* 响应式调整 */
-@media (max-width: 768px) {
-    .tabs li a {
-        padding: 0.8rem 0.3rem;
-    }
-
-    .tabs li a i {
-        font-size: 1.2rem;
-        margin-bottom: 0.3rem;
-    }
-
-    .tabs li a span {
-        font-size: 0.8rem;
-    }
-
-    .banner-content h1 {
-        font-size: 2rem;
-    }
-
-    .banner-content p {
-        font-size: 1.2rem;
-    }
-
-    .banner-content .btn {
-        padding: 0.8rem 1.5rem;
-    }
 }
