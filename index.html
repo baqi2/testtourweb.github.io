@@ -289,7 +289,7 @@
             // 更新活动标签
             navLinks.forEach(link => {
                 link.parentElement.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
+                if (link.getAttribute('href') == `#${current}`) {
                     link.parentElement.classList.add('active');
                 }
             });
