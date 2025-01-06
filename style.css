@@ -53,12 +53,12 @@ body {
 /* 标签页样式 - 修改为横向排列 */
 .tabs {
     display: flex;
-    flex-direction: row; /* 确保横向排列 */
+    flex-direction: column; /* 确保横向排列 */
     flex: 1;
     list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 2px; /* 标签之间的间隔 */
+    margin: auto;
+    padding: auto;
+    gap: auto; /* 标签之间的间隔 */
 }
 
 .tabs li {
