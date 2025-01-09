@@ -129,16 +129,24 @@ body {
 }
 
 .banner-content {
-    background-image: url('images/banner.jpg'); /* 替换为您的背景图片路径 */
+    position: relative; /* 设置相对定位 */
+    background-image: url('images/banner.jpg'); /* 确保路径正确 */
     background-size: cover; /* 背景图片覆盖整个区域 */
     background-position: center; /* 背景图片居中 */
     height: 400px; /* 设置高度 */
+    overflow: hidden; /* 确保内容不会超出边界 */
     display: flex; /* 使用 flexbox 布局 */
     flex-direction: column; /* 垂直排列 */
     justify-content: center; /* 垂直居中 */
     align-items: center; /* 水平居中 */
     text-align: center; /* 文本居中 */
     color: white; /* 文字颜色 */
+}
+
+.banner-content h1,
+.banner-content p {
+    position: relative; /* 设置相对定位以确保在背景上方 */
+    z-index: 1; /* 确保文本在背景之上 */
 }
 
 .banner-content h1 {
@@ -159,6 +167,7 @@ body {
     text-decoration: none; /* 去掉下划线 */
     border-radius: 5px; /* 圆角 */
     transition: background-color 0.3s; /* 平滑过渡效果 */
+    z-index: 1; /* 确保按钮在背景之上 */
 }
 
 .banner-content .btn:hover {
