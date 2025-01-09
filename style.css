@@ -91,6 +91,7 @@ body {
     margin-bottom: 0.5rem;
     width: 100%;
     text-align: center;
+    height: 40px;
 }
 
 .logo img {
@@ -114,15 +115,17 @@ body {
 #home {
     height: 100vh;
     position: relative;
-    padding-top: 100px; /* 为导航栏留出空间 */
+    padding-top: 0px; /* 为导航栏留出空间 */
 }
 
 .banner {
     height: 100%;
     width: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../images/banner.jpg');
-    background-size: cover;
-    background-position: center;
+    background-image: url('images/banner.jpg'); /* 确保路径正确 */
+    background-size: cover; /* 背景图片覆盖整个区域 */
+    background-position: center; /* 背景图片居中 */
+    height: 100px; /* 设置高度 */
+    overflow: hidden; /* 确保内容不会超出边界 */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -130,10 +133,7 @@ body {
 
 .banner-content {
     position: relative; /* 设置相对定位 */
-    background-image: url('images/banner.jpg'); /* 确保路径正确 */
-    background-size: cover; /* 背景图片覆盖整个区域 */
-    background-position: center; /* 背景图片居中 */
-    height: 400px; /* 设置高度 */
+    height: 100px; /* 设置高度 */
     overflow: hidden; /* 确保内容不会超出边界 */
     display: flex; /* 使用 flexbox 布局 */
     flex-direction: column; /* 垂直排列 */
@@ -141,6 +141,7 @@ body {
     align-items: center; /* 水平居中 */
     text-align: center; /* 文本居中 */
     color: white; /* 文字颜色 */
+    z-index: 1; /* 确保文本在背景之上 */
 }
 
 .banner-content h1,
@@ -180,7 +181,7 @@ body {
 }
 
 nav ul li a.active {
-    background-color: #007BFF; /* 活动链接的背景颜色 */
+    background-color: #f1f3f5; /* 活动链接的背景颜色 */
     font-weight: bold; /* 活动链接加粗 */
-    color: white; /* 活动链接文字颜色 */
+    color: black; /* 活动链接文字颜色 */
 }
