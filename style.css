@@ -124,7 +124,7 @@ body {
     background-image: url('images/banner.jpg'); /* 确保路径正确 */
     background-size: cover; /* 背景图片覆盖整个区域 */
     background-position: center; /* 背景图片居中 */
-    height: 100px; /* 设置高度 */
+    height: 300px; /* 设置高度 */
     overflow: hidden; /* 确保内容不会超出边界 */
     display: flex;
     align-items: center;
@@ -133,7 +133,7 @@ body {
 
 .banner-content {
     position: relative; /* 设置相对定位 */
-    height: 100px; /* 设置高度 */
+    height: 200px; /* 设置高度 */
     overflow: hidden; /* 确保内容不会超出边界 */
     display: flex; /* 使用 flexbox 布局 */
     flex-direction: column; /* 垂直排列 */
