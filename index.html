@@ -55,6 +55,7 @@
                     <h1>定制您的专属旅游体验</h1>
                     <p>探索世界，发现美好</p>
                     <a href="#projects" class="btn">开始探索</a>
+                    <img src="images/banner.jpg" alt="banner">
                 </div>
             </div>
         </section>
@@ -64,23 +65,19 @@
                 <h2 class="section-title">我们的特色</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <i class="fas fa-route"></i>
-                        <h3>私人定制</h3>
+                        <i class="fas fa-route"></i><h3>私人定制</h3>
                         <p>根据您的个性化需求，量身打造专属旅行方案</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-hotel"></i>
-                        <h3>精选住宿</h3>
+                        <i class="fas fa-hotel"></i><h3>精选住宿</h3>
                         <p>严选全球优质酒店，确保舒适的住宿体验</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-user-tie"></i>
-                        <h3>专业导游</h3>
+                        <i class="fas fa-user-tie"></i><h3>专业导游</h3>
                         <p>资深导游团队，提供专业的旅行陪同服务</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>安全保障</h3>
+                        <i class="fas fa-shield-alt"></i><h3>安全保障</h3>
                         <p>全方位旅行保险，让您安心出行无忧</p>
                     </div>
                 </div>
@@ -94,25 +91,19 @@
                     <div class="destination-card">
                         <img src="images/paris.jpg" alt="巴黎">
                         <div class="destination-info">
-                            <h3>巴黎</h3>
-                            <p>浪漫之都，艺术与时尚的完美融合</p>
-                            <span class="price">起价 ¥9999</span>
+                            <h3>巴黎</h3><p>浪漫之都，艺术与时尚的完美融合</p><span class="price">起价 ¥9999</span>
                         </div>
                     </div>
                     <div class="destination-card">
                         <img src="images/tokyo.jpg" alt="东京">
                         <div class="destination-info">
-                            <h3>东京</h3>
-                            <p>现代与传统交织的魅力都市</p>
-                            <span class="price">起价 ¥6999</span>
+                            <h3>东京</h3><p>现代与传统交织的魅力都市</p><span class="price">起价 ¥6999</span>
                         </div>
                     </div>
                     <div class="destination-card">
                         <img src="images/bali.jpg" alt="巴厘岛">
                         <div class="destination-info">
-                            <h3>巴厘岛</h3>
-                            <p>热带天堂，尽享阳光与海滩</p>
-                            <span class="price">起价 ¥5999</span>
+                            <h3>巴厘岛</h3><p>热带天堂，尽享阳光与海滩</p><span class="price">起价 ¥5999</span>
                         </div>
                     </div>
                 </div>
@@ -275,13 +266,14 @@
         const navLinks = document.querySelectorAll('.tabs li a');
 
         // 监听滚动事件
-        window.addEventListener('scroll', () => {
+        window.addEventListener('scroll', function() {
             let current = '';
             
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
+                const sectionTop = section.getBoundingClientRect().top;
                 const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop - 150) {
+
+                if (sectionTop >= 0 && sectionTop < window.innerHeight / 2) {
                     current = section.getAttribute('id');
                 }
             });
@@ -289,7 +281,7 @@
             // 更新活动标签
             navLinks.forEach(link => {
                 link.parentElement.classList.remove('active');
-                if (link.getAttribute('href') == `#${current}`) {
+                if (link.getAttribute('href') === `#${current}`) {
                     link.parentElement.classList.add('active');
                 }
             });

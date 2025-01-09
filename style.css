@@ -170,3 +170,9 @@ body {
 .content {
     padding-top: 100px; /* 为固定导航腾出空间 */
 }
+
+nav ul li a.active {
+    background-color: #007BFF; /* 活动链接的背景颜色 */
+    font-weight: bold; /* 活动链接加粗 */
+    color: white; /* 活动链接文字颜色 */
+}
