@@ -220,7 +220,6 @@ nav ul li a.active {
 }
 
 .about-image {
-    float: left;  /* 靠左浮动 */
     margin-right: 2rem;  /* 右侧添加间距，与文字分开 */
     margin-bottom: 1rem;  /* 底部添加间距 */
 }
