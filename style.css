@@ -88,6 +88,8 @@ body {
 }
 /* Logo样式 */
 .logo {
+    display: flex;
+    align-items: center;
     padding: 0.5rem;
     background: white;
     margin-bottom: 0.5rem;
@@ -99,6 +101,12 @@ body {
 .logo img {
     height: 40px;
     width: auto;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;  /* 根据你的设计调整文字颜色 */
 }
 
 /* 响应式调整 */
