@@ -7,23 +7,13 @@ Write-Host "Starting to download new images..."
 
 # Define new images list
 $newImages = @{
-    "paris.jpg" = @{
-        url = "https://images.unsplash.com/photo-1502602898657-3e91760cbb34"
-        width = 600
-        height = 400
+    "avatar2.jpg" = @{
+        url = "https://randomuser.me/api/portraits/women/1.jpg"
+        width = 200
+        height = 200
     }
-    "tokyo.jpg" = @{
-        url = "https://images.unsplash.com/photo-1513407030348-c983a97b98d8"
-        width = 600
-        height = 400
-    }
-    "bali.jpg" = @{
-        url = "https://images.unsplash.com/photo-1539367628448-4bc5c9d171c8"
-        width = 600
-        height = 400
-    }
-    "avatar1.jpg" = @{
-        url = "https://randomuser.me/api/portraits/men/1.jpg"
+    "avatar3.jpg" = @{
+        url = "https://randomuser.me/api/portraits/women/2.jpg"
         width = 200
         height = 200
     }
