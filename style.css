@@ -55,7 +55,7 @@ body {
 .tabs li a {
     display: block; /* 改为块级显示 */
     padding: 1rem;
-    color: white;
+    color: black;
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
