@@ -229,4 +229,8 @@ nav ul li a.active {
     border-radius: 8px; /* 可选：添加圆角 */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 可选：添加阴影效果 */
     object-fit: cover; /* 确保图片比例正确 */
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9dcda02e87977d0fa0a5b67f917cf7dcd829bc61
