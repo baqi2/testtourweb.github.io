@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Microsoft YaHei', sans-serif;
-    line-height: 1.6;
+    line-height: 2;
     color: #333;
 }
 
@@ -90,23 +90,25 @@ body {
 .logo {
     display: flex;
     align-items: center;
-    padding: 0.5rem;
+    padding: 5px;
     background: white;
-    margin-bottom: 0.5rem;
+    margin-bottom: 5px;
     width: 100%;
     text-align: center;
-    height: 40px;
+    height: 50px;
 }
 
 .logo img {
     height: 40px;
     width: auto;
+    vertical-align: middle; 
 }
 
 .logo-text {
     font-size: 1.2rem;
     font-weight: bold;
     color: #333;  /* 根据你的设计调整文字颜色 */
+    vertical-align: middle; 
 }
 
 /* 响应式调整 */
@@ -218,19 +220,14 @@ nav ul li a.active {
 }
 
 .about-image {
-    width: 100%;
-    max-width: 450px; /* 限制最大宽度 */
-    margin: 2rem auto;
+    float: left;  /* 靠左浮动 */
+    margin-right: 2rem;  /* 右侧添加间距，与文字分开 */
+    margin-bottom: 1rem;  /* 底部添加间距 */
 }
 
 .about-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px; /* 可选：添加圆角 */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 可选：添加阴影效果 */
-    object-fit: cover; /* 确保图片比例正确 */
-<<<<<<< HEAD
+    width: 600px;  /* 固定宽度 */
+    height: auto;  /* 固定高度 */
+    object-fit: cover;  /* 确保图片不变形 */
+    border-radius: 8px;  /* 可选：添加圆角 */
 }
-=======
-}
->>>>>>> 9dcda02e87977d0fa0a5b67f917cf7dcd829bc61
