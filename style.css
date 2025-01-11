@@ -211,7 +211,7 @@ nav ul li a.active {
 
 .about-image {
     width: 100%;
-    max-width: 500px; /* 限制最大宽度 */
+    max-width: 450px; /* 限制最大宽度 */
     margin: 2rem auto;
 }
 
