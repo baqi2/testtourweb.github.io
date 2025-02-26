@@ -7,14 +7,16 @@
 
 body {
     font-family: 'Microsoft YaHei', sans-serif;
-    line-height: 2;
+    line-height: 1.6;
     color: #333;
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* 导航栏样式 */
@@ -24,6 +26,8 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .tab-nav {
@@ -33,199 +37,389 @@ body {
     width: 100%;
 }
 
-/* 标签页样式 */
-.tabs {
-    display: flex;
-    flex-direction: row; /* 横向排列 */
-    width: 100%;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.tabs li {
-    flex: 1; /* 每个标签占据相等宽度 */
-    border-right: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.tabs li:last-child {
-    border-right: none;
-}
-
-.tabs li a {
-    display: block; /* 改为块级显示 */
-    padding: 1rem;
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    transition: all 0.3s ease;
-}
-
-/* 为每个标签设置不同的背景色 */
-.tabs li:nth-child(1) { background: #3498db; }
-.tabs li:nth-child(2) { background: #e74c3c; }
-.tabs li:nth-child(3) { background: #2ecc71; }
-.tabs li:nth-child(4) { background: #f1c40f; }
-.tabs li:nth-child(5) { background: #9b59b6; }
-
-.tabs li a i {
-    display: inline-block;
-    margin-right: 0.5rem;
-    font-size: 1.2rem;
-}
-
-.tabs li:hover {
-    filter: brightness(1.2);
-}
-
-.tabs li.active {
-    filter: brightness(1.3);
-    font-weight: bold;
-}
-
-.tabs li.active a {
-    color: white; /* 活动链接的颜色 */
-}
 /* Logo样式 */
 .logo {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
-    padding: 5px;
+    padding: 10px 20px;
     background: white;
-    margin-bottom: 0px;
     width: 100%;
-    text-align: center;
-    height: 50px;
+    height: 60px;
 }
 
 .logo img {
     height: 40px;
     width: auto;
-    vertical-align: middle; 
 }
 
 .logo-text {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #333;  /* 根据你的设计调整文字颜色 */
-    vertical-align: middle; 
+    color: #333;
+    margin: 0 15px;
+}
+
+/* 语言选择器样式 */
+.language-selector {
+    margin-left: auto;
+}
+
+.language-selector select {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+/* 标签页样式 */
+.tabs {
+    display: flex;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.tabs li {
+    flex: 1;
+    min-width: 100px;
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tabs li a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.tabs li a i {
+    margin-right: 8px;
+}
+
+/* 内容区域 */
+.content {
+    padding-top: 120px;
+}
+
+/* Banner部分 */
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* 特色功能网格 */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.feature-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+/* 目的地网格 */
+.destinations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.destination-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.destination-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.destination-info {
+    padding: 15px;
+}
+
+/* 项目网格 */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.project-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* 评价部分 */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px 0;
+}
+
+.testimonial-card {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* 联系表单 */
+.contact-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.contact-form textarea {
+    height: 150px;
+}
+
+/* 页脚 */
+footer {
+    background: #333;
+    color: white;
+    padding: 40px 0 20px;
+    margin-top: 50px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 /* 响应式调整 */
 @media (max-width: 768px) {
+    /* 导航栏调整 */
+    .logo {
+        flex-wrap: wrap;
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo-text {
+        font-size: 1rem;
+        margin: 5px 0;
+    }
+
+    .language-selector {
+        margin: 5px 0;
+    }
+
+    .tabs {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tabs li {
+        flex: 0 0 auto;
+        width: auto;
+    }
+
     .tabs li a {
-        padding: 0.8rem 0.5rem;
+        padding: 0.8rem;
         font-size: 0.9rem;
     }
 
     .tabs li a i {
         font-size: 1rem;
     }
+
+    /* 内容区域调整 */
+    .content {
+        padding-top: 140px;
+    }
+
+    /* Banner调整 */
+    .banner {
+        height: 300px;
+    }
+
+    .banner-content h1 {
+        font-size: 1.8em;
+    }
+
+    .banner-content p {
+        font-size: 1em;
+    }
+
+    /* 网格布局调整 */
+    .features-grid,
+    .destinations-grid,
+    .project-grid,
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* 联系表单调整 */
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Banner部分 */
-#home {
-    height: 300px;
-    position: relative;
-    padding-top: 0px; /* 为导航栏留出空间 */
+/* 小屏幕设备 */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .banner-content h1 {
+        font-size: 1.5em;
+    }
+
+    .banner-content p {
+        font-size: 0.9em;
+    }
+
+    .feature-card,
+    .destination-card,
+    .project-card,
+    .testimonial-card {
+        margin: 10px 0;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
 }
 
-.banner {
-    height: 100%;
-    width: 100%;
-    background-image: url('images/banner.jpg'); /* 确保路径正确 */
-    background-size: cover; /* 背景图片覆盖整个区域 */
-    background-position: center; /* 背景图片居中 */
-    height: 300px; /* 设置高度 */
-    overflow: hidden; /* 确保内容不会超出边界 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+/* 暗色主题支持 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #f0f0f0;
+    }
+
+    .fixed-header,
+    .logo {
+        background-color: #2a2a2a;
+    }
+
+    .feature-card,
+    .destination-card,
+    .project-card,
+    .testimonial-card {
+        background-color: #2a2a2a;
+        color: #f0f0f0;
+    }
+
+    .contact-form input,
+    .contact-form textarea,
+    .language-selector select {
+        background-color: #333;
+        color: #f0f0f0;
+        border-color: #444;
+    }
 }
 
-.banner-content {
-    position: relative; /* 设置相对定位 */
-    height: 200px; /* 设置高度 */
-    overflow: hidden; /* 确保内容不会超出边界 */
-    display: flex; /* 使用 flexbox 布局 */
-    flex-direction: column; /* 垂直排列 */
-    justify-content: center; /* 垂直居中 */
-    align-items: center; /* 水平居中 */
-    text-align: center; /* 文本居中 */
-    color: white; /* 文字颜色 */
-    z-index: 1; /* 确保文本在背景之上 */
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-.banner-content h1,
-.banner-content p {
-    position: relative; /* 设置相对定位以确保在背景上方 */
-    z-index: 1; /* 确保文本在背景之上 */
+.feature-card,
+.destination-card,
+.project-card,
+.testimonial-card {
+    animation: fadeIn 0.5s ease-out;
 }
 
-.banner-content h1 {
-    font-size: 2.5em; /* 调整标题大小 */
-    margin: 10px 0; /* 上下外边距 */
+/* 无障碍支持 */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
 }
 
-.banner-content p {
-    font-size: 1.2em; /* 段落字体大小 */
-    margin: 10px 0; /* 上下外边距 */
-}
+/* 打印样式 */
+@media print {
+    .fixed-header,
+    .banner {
+        display: none;
+    }
 
-.banner-content .btn {
-    display: inline-block; /* 使按钮为块级元素 */
-    padding: 10px 20px; /* 内边距 */
-    background-color: rgba(0, 123, 255, 0.8); /* 按钮背景颜色，带透明度 */
-    color: white; /* 按钮文字颜色 */
-    text-decoration: none; /* 去掉下划线 */
-    border-radius: 5px; /* 圆角 */
-    transition: background-color 0.3s; /* 平滑过渡效果 */
-    z-index: 1; /* 确保按钮在背景之上 */
-}
+    .content {
+        padding-top: 0;
+    }
 
-.banner-content .btn:hover {
-    background-color: rgba(0, 86, 179, 0.8); /* 悬停时的按钮颜色 */
-}
-
-/* 内容区域调整 */
-.content {
-    padding-top: 100px; /* 为固定导航腾出空间 */
-}
-
-nav ul li a.active {
-    background-color: #f1f3f5; /* 活动链接的背景颜色 */
-    font-weight: bold; /* 活动链接加粗 */
-    color: black; /* 活动链接文字颜色 */
-}
-
-/* style.css */
-#testimonials {
-    padding: 20px; /* 内边距 */
-    background-color: #f9f9f9; /* 背景颜色 */
-    border: 1px solid #ccc; /* 边框 */
-    margin: 20px 0; /* 外边距 */
-}
-
-.testimonial {
-    display: flex; /* 使用 flexbox 布局 */
-    align-items: center; /* 垂直居中 */
-    margin-bottom: 15px; /* 每个评价之间的间距 */
-}
-
-.avatar {
-    width: 20px; /* 头像宽度 */
-    height: 20px; /* 头像高度 */
-    border-radius: 50%; /* 圆形头像 */
-    margin-right: 15px; /* 头像与文本之间的间距 */
-}
-
-.about-image {
-    margin-right: 2rem;  /* 右侧添加间距，与文字分开 */
-    margin-bottom: 1rem;  /* 底部添加间距 */
-}
-
-.about-image img {
-    width: 600px;  /* 固定宽度 */
-    height: auto;  /* 固定高度 */
-    object-fit: cover;  /* 确保图片不变形 */
-    border-radius: 8px;  /* 可选：添加圆角 */
+    body {
+        color: black;
+        background: white;
+    }
 }

@@ -12,37 +12,46 @@
         <nav class="tab-nav">
             <div class="logo">
                 <img src="images/logo.png" alt="旅游网站标志">
-                <span class="logo-text">旅游网站名称</span>
+                <span class="logo-text" data-i18n="siteName">旅游网站名称</span>
+                <div class="language-selector">
+                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                        <option value="zh">中文</option>
+                        <option value="en">English</option>
+                        <option value="ja">日本語</option>
+                        <option value="fr">Français</option>
+                        <option value="es">Español</option>
+                    </select>
+                </div>
             </div>
             <ul class="tabs">
                 <li class="active">
                     <a href="#home">
                         <i class="fas fa-home"></i>
-                        <span>首页</span>
+                        <span data-i18n="nav.home">首页</span>
                     </a>
                 </li>
                 <li>
                     <a href="#about">
                         <i class="fas fa-info-circle"></i>
-                        <span>关于我们</span>
+                        <span data-i18n="nav.about">关于我们</span>
                     </a>
                 </li>
                 <li>
                     <a href="#projects">
                         <i class="fas fa-project-diagram"></i>
-                        <span>项目介绍</span>
+                        <span data-i18n="nav.projects">项目介绍</span>
                     </a>
                 </li>
                 <li>
                     <a href="#testimonials">
                         <i class="fas fa-comments"></i>
-                        <span>客户评价</span>
+                        <span data-i18n="nav.testimonials">客户评价</span>
                     </a>
                 </li>
                 <li>
                     <a href="#contact">
                         <i class="fas fa-envelope"></i>
-                        <span>联系我们</span>
+                        <span data-i18n="nav.contact">联系我们</span>
                     </a>
                 </li>
             </ul>
@@ -53,88 +62,98 @@
         <section id="home">
             <div class="banner">
                 <div class="banner-content">
-                    <h1>定制您的专属旅游体验</h1>
-                    <p>探索世界，发现美好</p>
-                    <a href="#projects" class="btn">开始探索吧</a>
+                    <h1 data-i18n="home.title">定制您的专属旅游体验</h1>
+                    <p data-i18n="home.subtitle">探索世界，发现美好</p>
+                    <a href="#projects" class="btn" data-i18n="home.exploreBtn">开始探索吧</a>
                 </div>
             </div>
         </section>
 
         <section id="about" class="section-padding">
             <div class="container">
-                <h2>关于我们</h2>
+                <h2 data-i18n="about.title">关于我们</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>我们是专业的旅游定制服务商，致力于为您打造独特的旅行体验。</p>
-                        <p>拥有十年行业经验，服务过上千位满意客户。</p>
+                        <p data-i18n="about.description">我们是专业的旅游定制服务商，致力于为您打造独特的旅行体验。</p>
+                        <p data-i18n="about.experience">拥有十年行业经验，服务过上千位满意客户。</p>
                     </div>
                     <div class="about-image">
                         <img src="images/about.jpg" alt="关于我们">
                     </div>
-                <h2 class="section-title">我们的特色</h2>
+                <h2 class="section-title" data-i18n="features.title">我们的特色</h2>
                 <div class="features-grid">
                     <div class="feature-card">
-                        <i class="fas fa-route"></i><h3>私人定制</h3>
-                        <p>根据您的个性化需求，量身打造专属旅行方案</p>
+                        <i class="fas fa-route"></i>
+                        <h3 data-i18n="features.customization.title">私人定制</h3>
+                        <p data-i18n="features.customization.description">根据您的个性化需求，量身打造专属旅行方案</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-hotel"></i><h3>精选住宿</h3>
-                        <p>严选全球优质酒店，确保舒适的住宿体验</p>
+                        <i class="fas fa-hotel"></i>
+                        <h3 data-i18n="features.accommodation.title">精选住宿</h3>
+                        <p data-i18n="features.accommodation.description">严选全球优质酒店，确保舒适的住宿体验</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-user-tie"></i><h3>专业导游</h3>
-                        <p>资深导游团队，提供专业的旅行陪同服务</p>
+                        <i class="fas fa-user-tie"></i>
+                        <h3 data-i18n="features.guide.title">专业导游</h3>
+                        <p data-i18n="features.guide.description">资深导游团队，提供专业的旅行陪同服务</p>
                     </div>
                     <div class="feature-card">
-                        <i class="fas fa-shield-alt"></i><h3>安全保障</h3>
-                        <p>全方位旅行保险，让您安心出行无忧</p>
+                        <i class="fas fa-shield-alt"></i>
+                        <h3 data-i18n="features.safety.title">安全保障</h3>
+                        <p data-i18n="features.safety.description">全方位旅行保险，让您安心出行无忧</p>
                     </div>
                 </div>
-                <h2 class="section-title">热门目的地</h2>
+                <h2 class="section-title" data-i18n="destinations.title">热门目的地</h2>
                 <div class="destinations-grid">
                     <div class="destination-card">
                         <img src="images/paris.jpg" alt="巴黎">
                         <div class="destination-info">
-                            <h3>巴黎</h3><p>浪漫之都，艺术与时尚的完美融合</p><span class="price">起价 ¥9999</span>
+                            <h3 data-i18n="destinations.paris.name">巴黎</h3>
+                            <p data-i18n="destinations.paris.description">浪漫之都，艺术与时尚的完美融合</p>
+                            <span class="price" data-i18n="destinations.paris.price">起价 ¥9999</span>
                         </div>
                     </div>
                     <div class="destination-card">
                         <img src="images/tokyo.jpg" alt="东京">
                         <div class="destination-info">
-                            <h3>东京</h3><p>现代与传统交织的魅力都市</p><span class="price">起价 ¥6999</span>
+                            <h3 data-i18n="destinations.tokyo.name">东京</h3>
+                            <p data-i18n="destinations.tokyo.description">现代与传统交织的魅力都市</p>
+                            <span class="price" data-i18n="destinations.tokyo.price">起价 ¥6999</span>
                         </div>
                     </div>
                     <div class="destination-card">
                         <img src="images/bali.jpg" alt="巴厘岛">
                         <div class="destination-info">
-                            <h3>巴厘岛</h3><p>热带天堂，尽享阳光与海滩</p><span class="price">起价 ¥5999</span>
+                            <h3 data-i18n="destinations.bali.name">巴厘岛</h3>
+                            <p data-i18n="destinations.bali.description">热带天堂，尽享阳光与海滩</p>
+                            <span class="price" data-i18n="destinations.bali.price">起价 ¥5999</span>
                         </div>
                     </div>
                 </div>
                 <div class="text-center" style="margin-top: 2rem;">
-                    <a href="#contact" class="btn">咨询更多目的地</a>
+                    <a href="#contact" class="btn" data-i18n="destinations.moreBtn">咨询更多目的地</a>
                 </div>
             </div>
         </section>
 
         <section id="projects">
             <div class="container">
-                <h2>热门项目</h2>
+                <h2 data-i18n="projects.title">热门项目</h2>
                 <div class="project-grid">
                     <div class="project-card">
                         <img src="images/project1.jpg" alt="项目1">
-                        <h3>欧洲深度游</h3>
-                        <p>体验欧洲文化艺术之旅</p>
+                        <h3 data-i18n="projects.europe.title">欧洲深度游</h3>
+                        <p data-i18n="projects.europe.description">体验欧洲文化艺术之旅</p>
                     </div>
                     <div class="project-card">
                         <img src="images/project2.jpg" alt="项目2">
-                        <h3>东南亚海岛游</h3>
-                        <p>享受阳光沙滩假期</p>
+                        <h3 data-i18n="projects.asia.title">东南亚海岛游</h3>
+                        <p data-i18n="projects.asia.description">享受阳光沙滩假期</p>
                     </div>
                     <div class="project-card">
                         <img src="images/project3.jpg" alt="项目3">
-                        <h3>日本温泉游</h3>
-                        <p>感受日本传统文化</p>
+                        <h3 data-i18n="projects.japan.title">日本温泉游</h3>
+                        <p data-i18n="projects.japan.description">感受日本传统文化</p>
                     </div>
                 </div>
             </div>
@@ -142,15 +161,15 @@
 
         <section id="testimonials" class="section-padding">
             <div class="container">
-                <h2 class="section-title">客户评价</h2>
+                <h2 class="section-title" data-i18n="testimonials.title">客户评价</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
                         <div class="testimonial-content">
                             <img src="images/avatar1.jpg" alt="客户头像" class="avatar">
-                            <p class="quote">"服务非常专业，行程安排很合理，是一次难忘的旅行体验！"</p>
+                            <p class="quote" data-i18n="testimonials.client1.quote">"服务非常专业，行程安排很合理，是一次难忘的旅行体验！"</p>
                             <div class="client-info">
-                                <h4>张先生</h4>
-                                <p>欧洲深度游客户</p>
+                                <h4 data-i18n="testimonials.client1.name">张先生</h4>
+                                <p data-i18n="testimonials.client1.trip">欧洲深度游客户</p>
                                 <div class="stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -164,10 +183,10 @@
                     <div class="testimonial-card">
                         <div class="testimonial-content">
                             <img src="images/avatar2.jpg" alt="客户头像" class="avatar">
-                            <p class="quote">"导游很专业，酒店选择也很棒，整体体验非常满意！"</p>
+                            <p class="quote" data-i18n="testimonials.client2.quote">"导游很专业，酒店选择也很棒，整体体验非常满意！"</p>
                             <div class="client-info">
-                                <h4>李女士</h4>
-                                <p>日本温泉游客户</p>
+                                <h4 data-i18n="testimonials.client2.name">李女士</h4>
+                                <p data-i18n="testimonials.client2.trip">日本温泉游客户</p>
                                 <div class="stars">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -201,14 +220,14 @@
 
         <section id="contact">
             <div class="container">
-                <h2>联系我们</h2>
+                <h2 data-i18n="contact.title">联系我们</h2>
                 <div class="contact-content">
                     <form class="contact-form">
-                        <input type="text" placeholder="您的姓名">
-                        <input type="email" placeholder="电子邮箱">
-                        <input type="telphone" placeholder="联系电话">
-                        <textarea placeholder="留言内容"></textarea>
-                        <button type="submit" class="btn">发送信息</button>
+                        <input type="text" data-i18n="contact.form.name" placeholder="您的姓名">
+                        <input type="email" data-i18n="contact.form.email" placeholder="电子邮箱">
+                        <input type="tel" data-i18n="contact.form.phone" placeholder="联系电话">
+                        <textarea data-i18n="contact.form.message" placeholder="留言内容"></textarea>
+                        <button type="submit" class="btn" data-i18n="contact.form.submit">发送信息</button>
                     </form>
                     <div class="contact-info">
                         <div class="info-item">
@@ -278,5 +297,6 @@
         });
     });
     </script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>
