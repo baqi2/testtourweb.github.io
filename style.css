@@ -26,7 +26,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: white;
+    background-color: #ff4d4d; /* 更亮的红色 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -66,6 +66,10 @@ body {
     margin-left: auto;
     position: relative;
     z-index: 1001;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 20px;
 }
 
 .language-selector select {
@@ -107,10 +111,18 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    color: white;
+    color: #ffffff; /* 确保字体颜色为白色 */
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
+}
+
+.tabs li a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* 鼠标悬停时的背景颜色 */
+}
+
+.tabs li a:active {
+    background-color: rgba(255, 255, 255, 0.3); /* 鼠标点击时的背景颜色 */
 }
 
 .tabs li a i {
@@ -157,6 +169,12 @@ body {
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 /* 目的地网格 */
@@ -172,6 +190,12 @@ body {
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.destination-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .destination-card img {
@@ -199,6 +223,11 @@ body {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
 .project-card img {
     width: 100%;
     height: 200px;
@@ -218,6 +247,12 @@ body {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .avatar {
