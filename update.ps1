@@ -48,6 +48,16 @@ while (-not $success -and $retryCount -lt $maxRetries) {
                 Write-Host "Using system proxy: $proxy" -ForegroundColor Yellow
                 git config --global http.proxy "http://$proxy"
                 git config --global https.proxy "http://$proxy"
+            } else {
+                # Retry with port 1080
+                Write-Host "System proxy not found, retrying with port 1080..." -ForegroundColor Yellow
+                git config --global http.proxy "http://127.0.0.1:1080"
+                git config --global https.proxy "http://127.0.0.1:1080"
+            } else {
+                # Retry with port 1081
+                Write-Host "System proxy not found, retrying with port 1081..." -ForegroundColor Yellow
+                git config --global http.proxy "http://127.0.0.1:1081"
+                git config --global https.proxy "http://127.0.0.1:1081"
             }
             
             # Additional retry configurations
@@ -72,4 +82,4 @@ if (-not $success) {
 git config --global --unset http.proxy
 git config --global --unset https.proxy
 
-Write-Host "Update completed successfully!" -ForegroundColor Green 
+Write-Host "Update completed successfully!" -ForegroundColor Green
