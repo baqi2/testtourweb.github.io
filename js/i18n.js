@@ -17,7 +17,18 @@ const translations = {
         about: {
             title: "关于我们",
             description: "我们是专业的旅游定制服务商，致力于为您打造独特的旅行体验。",
-            experience: "拥有十年行业经验，服务过上千位满意客户。"
+            imageCaption: "全球旅行专家",
+            stats: {
+                years: "年行业经验",
+                clients: "满意客户",
+                destinations: "目的地",
+                support: "全天候服务"
+            },
+            certifications: {
+                iso: "ISO 9001认证",
+                tourism: "国际旅游协会认证",
+                safety: "安全保障认证"
+            }
         },
         features: {
             title: "我们的特色",
@@ -83,6 +94,11 @@ const translations = {
                 quote: "导游很专业，酒店选择也很棒，整体体验非常满意！",
                 name: "李女士",
                 trip: "日本温泉游客户"
+            },
+            client3: {
+                quote: "定制服务很贴心，完全按照我们的需求安排，超出预期！",
+                name: "王先生",
+                trip: "东南亚海岛游客户"
             }
         },
         contact: {
@@ -113,7 +129,18 @@ const translations = {
         about: {
             title: "About Us",
             description: "We are professional travel customization service providers, dedicated to creating unique travel experiences for you.",
-            experience: "With ten years of industry experience, we have served thousands of satisfied customers."
+            imageCaption: "Global Travel Experts",
+            stats: {
+                years: "Years Experience",
+                clients: "Happy Clients",
+                destinations: "Destinations",
+                support: "Support"
+            },
+            certifications: {
+                iso: "ISO 9001 Certified",
+                tourism: "IATA Certified",
+                safety: "Safety Certified"
+            }
         },
         features: {
             title: "Our Features",
@@ -179,6 +206,11 @@ const translations = {
                 quote: "Professional guide, great hotel choices, very satisfied with the overall experience!",
                 name: "Ms. Li",
                 trip: "Japan Hot Spring Tour Client"
+            },
+            client3: {
+                quote: "The customized service is very thoughtful, arranged exactly according to our needs, exceeded expectations!",
+                name: "Mr. Wang",
+                trip: "Southeast Asia Island Tour Client"
             }
         },
         contact: {
@@ -209,7 +241,18 @@ const translations = {
         about: {
             title: "会社概要",
             description: "私たちは、お客様に特別な旅行体験を提供することに専念しているプロフェッショナルな旅行カスタマイズサービス提供者です。",
-            experience: "業界10年の経験を持ち、数千人のお客様にご満足いただいています。"
+            imageCaption: "グローバル旅行のエキスパート",
+            stats: {
+                years: "年の経験",
+                clients: "お客様数",
+                destinations: "目的地",
+                support: "サポート"
+            },
+            certifications: {
+                iso: "ISO 9001認証",
+                tourism: "IATA認証",
+                safety: "安全認証"
+            }
         },
         features: {
             title: "特徴",
@@ -275,6 +318,11 @@ const translations = {
                 quote: "ガイドが専門的で、ホテルの選択も素晴らしく、全体的な体験に大変満足しています！",
                 name: "李様",
                 trip: "日本温泉ツアーのお客様"
+            },
+            client3: {
+                quote: "カスタマイズサービスが非常に丁寧で、私たちのニーズに完全に応えてくれました。期待以上でした！",
+                name: "王様",
+                trip: "東南アジアアイランドツアーのお客様"
             }
         },
         contact: {
@@ -305,7 +353,18 @@ const translations = {
         about: {
             title: "À Propos de Nous",
             description: "Nous sommes des professionnels de la personnalisation de voyages, dédiés à créer des expériences uniques pour vous.",
-            experience: "Avec dix ans d'expérience dans l'industrie, nous avons servi des milliers de clients satisfaits."
+            imageCaption: "Experts en Voyages Mondiaux",
+            stats: {
+                years: "Ans d'Expérience",
+                clients: "Clients Satisfaits",
+                destinations: "Destinations",
+                support: "Support 24/7"
+            },
+            certifications: {
+                iso: "Certifié ISO 9001",
+                tourism: "Certifié IATA",
+                safety: "Certifié Sécurité"
+            }
         },
         features: {
             title: "Nos Caractéristiques",
@@ -371,6 +430,11 @@ const translations = {
                 quote: "Guide professionnel, excellents choix d'hôtels, très satisfait de l'expérience globale !",
                 name: "Mme Li",
                 trip: "Cliente du Tour au Japon"
+            },
+            client3: {
+                quote: "Le service personnalisé est très attentionné, organisé exactement selon nos besoins, au-delà de nos attentes !",
+                name: "M. Wang",
+                trip: "Client du Tour des Îles d'Asie du Sud-Est"
             }
         },
         contact: {
@@ -401,7 +465,18 @@ const translations = {
         about: {
             title: "Sobre Nosotros",
             description: "Somos proveedores profesionales de servicios de viajes personalizados, dedicados a crear experiencias únicas para usted.",
-            experience: "Con diez años de experiencia en la industria, hemos servido a miles de clientes satisfechos."
+            imageCaption: "Expertos en Viajes Globales",
+            stats: {
+                years: "Años de Experiencia",
+                clients: "Clientes Satisfechos",
+                destinations: "Destinos",
+                support: "Soporte 24/7"
+            },
+            certifications: {
+                iso: "Certificado ISO 9001",
+                tourism: "Certificado IATA",
+                safety: "Certificado de Seguridad"
+            }
         },
         features: {
             title: "Nuestras Características",
@@ -467,6 +542,11 @@ const translations = {
                 quote: "¡Guía profesional, excelentes opciones de hoteles, muy satisfecho con la experiencia general!",
                 name: "Sra. Li",
                 trip: "Cliente del Tour por Japón"
+            },
+            client3: {
+                quote: "¡El servicio personalizado es muy atento, organizado exactamente según nuestras necesidades, superó las expectativas!",
+                name: "Sr. Wang",
+                trip: "Cliente del Tour por las Islas del Sudeste Asiático"
             }
         },
         contact: {
