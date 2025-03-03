@@ -32,6 +32,8 @@ git branch -M main
 $maxRetries = 3
 $retryCount = 0
 $success = $false
+$proxyPorts = @(1081, 1080, 10808, 10809)  # Define the ports to try
+$usedPorts = @()  # Keep track of used ports
 
 while (-not $success -and $retryCount -lt $maxRetries) {
     $pushResult = git push -u origin main 2>&1
@@ -48,16 +50,21 @@ while (-not $success -and $retryCount -lt $maxRetries) {
                 Write-Host "Using system proxy: $proxy" -ForegroundColor Yellow
                 git config --global http.proxy "http://$proxy"
                 git config --global https.proxy "http://$proxy"
-            } elseif (1 -eq 1) {
-                # Retry with port 1080
-                Write-Host "System proxy not found, retrying with port 1080..." -ForegroundColor Yellow
-                git config --global http.proxy "http://127.0.0.1:1080"
-                git config --global https.proxy "http://127.0.0.1:1080"
-            } else {
-                # Retry with port 1081
-                Write-Host "System proxy not found, retrying with port 1081..." -ForegroundColor Yellow
-                git config --global http.proxy "http://127.0.0.1:1081"
-                git config --global https.proxy "http://127.0.0.1:1081"
+            }
+
+            # Try additional ports if not already used
+            foreach ($port in $proxyPorts) {
+                if (-not $usedPorts.Contains($port)) {
+                    Write-Host "Retrying with port $port..." -ForegroundColor Yellow
+                    git config --global http.proxy "http://127.0.0.1:$port"
+                    git config --global https.proxy "http://127.0.0.1:$port"
+                    $pushResult = git push -u origin main 2>&1
+                    if ($LASTEXITCODE -eq 0) {
+                        $success = $true
+                        break
+                    }
+                    $usedPorts += $port  # Mark this port as used
+                }
             }
             
             # Additional retry configurations
