@@ -179,12 +179,13 @@ body {
 }
 
 .banner-image {
-    width: 100px; /* 图片宽度 */
-    height: 100px; /* 图片高度 */
+    width: 300px; /* 图片宽度增加到原来的3倍 */
+    height: 300px; /* 图片高度增加到原来的3倍 */
     overflow: hidden; /* 防止图片溢出 */
     border-radius: 8px; /* 圆角效果 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     perspective: 1000px; /* 3D 效果的透视 */
+    transform: rotateX(-10deg) rotateY(10deg); /* 初始状态下的3D效果 */
 }
 
 .banner-image img {
