@@ -167,7 +167,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* 半透明黑色蒙层 */
+    background: rgba(0, 0, 0, 0.05); /* 半透明黑色蒙层 */
     z-index: 1; /* 确保蒙层在背景图上 */
 }
 
