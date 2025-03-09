@@ -179,6 +179,7 @@ body {
     z-index: 2; /* 确保图片在蒙层上 */
     justify-content: space-between; /* 使图片左右铺满 */
     width: 90%; /* 设置宽度以适应屏幕 */
+    height: 50%;
 }
 
 .banner-image {
@@ -187,7 +188,7 @@ body {
     border-radius: 8px; /* 圆角效果 */
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     perspective: 1000px; /* 3D 效果的透视 */
-    transform: translateZ(-20px) rotateX(10deg); /* 初始状态下的3D效果，前后方向 */
+    transform: translateZ(-20px) rotateX(30deg); /* 初始状态下的3D效果，前后方向 */
 }
 
 .banner-image img {
