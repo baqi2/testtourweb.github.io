@@ -27,7 +27,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    /*background-color: rgba(255, 255, 255, 0.9); /* 半透明背景，稍微提高透明度 */
+    background-color: #E3F2FD; /* 不透明背景 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     color: #333333; /* 导航栏文字颜色 */
 }
