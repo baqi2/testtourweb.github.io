@@ -171,24 +171,23 @@ body {
 /* 新增的样式 */
 .banner-images {
     position: absolute;
-    bottom: 20px; /* 调整图片位置 */
+    bottom: 10px; /* 调整图片位置 */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 15px; /* 图片间距 */
+    gap: 10px; /* 图片间距 */
     z-index: 2; /* 确保图片在蒙层上 */
-    flex-wrap: wrap; /* 允许换行 */
-    justify-content: center; /* 居中对齐 */
+    justify-content: space-between; /* 使图片左右铺满 */
+    width: 90%; /* 设置宽度以适应屏幕 */
 }
 
 .banner-image {
-    width: 150px; /* 图片宽度 */
-    height: 150px; /* 图片高度 */
+    flex: 1; /* 使每个图片占据相同的空间 */
     overflow: hidden; /* 防止图片溢出 */
     border-radius: 8px; /* 圆角效果 */
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     perspective: 1000px; /* 3D 效果的透视 */
-    transform: rotateX(-15deg) rotateY(15deg); /* 初始状态下的3D效果 */
+    transform: translateZ(-20px) rotateX(10deg); /* 初始状态下的3D效果，前后方向 */
 }
 
 .banner-image img {
@@ -199,7 +198,7 @@ body {
 }
 
 .banner-image:hover img {
-    transform: translateZ(30px) rotateY(10deg); /* 鼠标悬停时的 3D 效果 */
+    transform: translateZ(30px) scale(1.1); /* 鼠标悬停时的 3D 效果，放大 */
 }
 
 /* 特色功能网格 */
@@ -608,8 +607,7 @@ footer {
     }
 
     .banner-image {
-        width: 100px; /* 在小屏幕上减小图片大小 */
-        height: 100px;
+        flex: 1; /* 在小屏幕上保持相同的空间分配 */
     }
 }
 
@@ -657,8 +655,7 @@ footer {
     }
 
     .banner-image {
-        width: 80px; /* 在更小屏幕上进一步减小图片大小 */
-        height: 80px;
+        flex: 1; /* 在更小屏幕上保持相同的空间分配 */
     }
 }
 
