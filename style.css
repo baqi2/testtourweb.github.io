@@ -154,6 +154,7 @@ body {
     color: white;
     width: 90%;
     max-width: 600px;
+    z-index: 2; /* 确保文字在图片上方 */
 }
 
 /* 添加蒙层样式 */
@@ -170,22 +171,24 @@ body {
 /* 新增的样式 */
 .banner-images {
     position: absolute;
-    bottom: 10px; /* 调整图片位置 */
+    bottom: 20px; /* 调整图片位置 */
     left: 50%;
     transform: translateX(-50%);
     display: flex;
-    gap: 10px; /* 图片间距 */
+    gap: 15px; /* 图片间距 */
     z-index: 2; /* 确保图片在蒙层上 */
+    flex-wrap: wrap; /* 允许换行 */
+    justify-content: center; /* 居中对齐 */
 }
 
 .banner-image {
-    width: 300px; /* 图片宽度增加到原来的3倍 */
-    height: 300px; /* 图片高度增加到原来的3倍 */
+    width: 150px; /* 图片宽度 */
+    height: 150px; /* 图片高度 */
     overflow: hidden; /* 防止图片溢出 */
     border-radius: 8px; /* 圆角效果 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     perspective: 1000px; /* 3D 效果的透视 */
-    transform: rotateX(-10deg) rotateY(10deg); /* 初始状态下的3D效果 */
+    transform: rotateX(-15deg) rotateY(15deg); /* 初始状态下的3D效果 */
 }
 
 .banner-image img {
@@ -196,7 +199,7 @@ body {
 }
 
 .banner-image:hover img {
-    transform: translateZ(20px) rotateY(10deg); /* 鼠标悬停时的 3D 效果 */
+    transform: translateZ(30px) rotateY(10deg); /* 鼠标悬停时的 3D 效果 */
 }
 
 /* 特色功能网格 */
@@ -603,6 +606,11 @@ footer {
     .sub-image {
         height: 150px;
     }
+
+    .banner-image {
+        width: 100px; /* 在小屏幕上减小图片大小 */
+        height: 100px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -646,6 +654,11 @@ footer {
 
     .sub-images {
         grid-template-columns: 1fr;
+    }
+
+    .banner-image {
+        width: 80px; /* 在更小屏幕上进一步减小图片大小 */
+        height: 80px;
     }
 }
 
