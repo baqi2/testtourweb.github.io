@@ -27,7 +27,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+    background-color: rgba(255, 255, 255, 0.9); /* 半透明背景，稍微提高透明度 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     color: #333333; /* 导航栏文字颜色 */
 }
@@ -141,7 +141,7 @@ body {
     position: relative;
     width: 100%;
     height: 400px;
-    background-image: url('images/banner.jpg'); /* 背景图片 */
+    background: linear-gradient(120deg, #89F7FE 0%, #66A6FF 100%); /* 渐变背景 */
     background-size: cover;
     background-position: center;
     overflow: hidden; /* 防止图片溢出 */
@@ -166,7 +166,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* 半透明黑色蒙层 */
+    background: rgba(255, 255, 255, 0.5); /* 更浅的蒙层颜色 */
     z-index: 1; /* 确保蒙层在背景图上 */
 }
 
@@ -795,4 +795,12 @@ p {
 .btn {
     background-color: #FFA726; /* 橙色按钮 */
     color: white; /* 按钮文字颜色 */
+}
+
+a {
+    color: #FFA726; /* 链接颜色 */
+}
+
+a:hover {
+    background-color: rgba(255, 167, 38, 0.2); /* 链接高亮效果 */
 }
