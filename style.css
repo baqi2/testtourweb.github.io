@@ -27,7 +27,7 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.9); /* 半透明背景，稍微提高透明度 */
+    /*background-color: rgba(255, 255, 255, 0.9); /* 半透明背景，稍微提高透明度 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     color: #333333; /* 导航栏文字颜色 */
 }
@@ -113,14 +113,14 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    color: #b4abab; /* 确保字体颜色为白色 */
+    color: #852c2c; /* 确保字体颜色为白色 */
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .tabs li a:hover {
-    background-color: rgba(255, 255, 255, 0.2); /* 鼠标悬停时的背景颜色 */
+    background-color: rgba(169, 131, 131, 0.2); /* 鼠标悬停时的背景颜色 */
 }
 
 .tabs li a:active {
