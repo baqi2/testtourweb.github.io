@@ -8,8 +8,9 @@
 body {
     font-family: 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
-    color: #333;
+    color: #333333; /* 主文本颜色 */
     overflow-x: hidden;
+    background-color: #E3F2FD; /* 浅蓝色背景 */
 }
 
 .container {
@@ -26,8 +27,9 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #ff4d4d; /* 更亮的红色 */
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明背景 */
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    color: #333333; /* 导航栏文字颜色 */
 }
 
 .tab-nav {
@@ -151,7 +153,7 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
-    color: white;
+    color: #333333; /* Banner中的文字颜色 */
     width: 90%;
     max-width: 600px;
     z-index: 2; /* 确保文字在图片上方 */
@@ -781,3 +783,16 @@ footer {
 .sub-image:nth-child(1) { --animation-order: 1; }
 .sub-image:nth-child(2) { --animation-order: 2; }
 .sub-image:nth-child(3) { --animation-order: 3; }
+
+h1, h2, h3, h4, h5, h6 {
+    color: #333333; /* 标题颜色 */
+}
+
+p {
+    color: #555555; /* 较浅的辅助文本颜色 */
+}
+
+.btn {
+    background-color: #FFA726; /* 橙色按钮 */
+    color: white; /* 按钮文字颜色 */
+}
