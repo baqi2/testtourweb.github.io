@@ -113,7 +113,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    color: #ffffff; /* 确保字体颜色为白色 */
+    color: #b4abab; /* 确保字体颜色为白色 */
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
@@ -124,7 +124,8 @@ body {
 }
 
 .tabs li a:active {
-    background-color: rgba(255, 255, 255, 0.3); /* 鼠标点击时的背景颜色 */
+    background-color: rgba(255, 0, 0, 0.3); /* 鼠标点击时的背景颜色 */
+    color: #000000; /* 确保字体颜色为黑色 */
 }
 
 .tabs li a i {
