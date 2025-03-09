@@ -386,6 +386,23 @@
             });
         });
     });
+    document.getElementById('languageSelect').addEventListener('change', function() {
+    const selectedLanguage = this.value;
+    
+    // 移除之前的语言类
+    document.body.classList.remove('chinese', 'japanese', 'english', 'french', 'spanish');
+
+    // 根据选择的语言添加相应的类
+    if (selectedLanguage === 'zh') {
+        document.body.classList.add('chinese');
+        document.body.style.backgroundColor = '#FAF9F6'; // 米白色背景
+    } else if (selectedLanguage === 'ja') {
+        document.body.classList.add('japanese');
+        document.body.style.backgroundColor = '#FAF9F6'; // 米白色背景
+    } else {
+        document.body.style.backgroundColor = '#E3F2FD'; // 浅蓝色背景
+    }
+});
     </script>
     <script src="js/i18n.js"></script>
 </body>
