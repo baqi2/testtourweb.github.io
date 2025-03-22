@@ -23,7 +23,7 @@ git remote set-url origin https://github.com/baqi2/testtourweb.github.io.git
 git add .
 
 # Commit changes
-git commit -m "Update website content"
+git commit -m "Update website content-版本1"
 
 # Rename master branch to main
 git branch -M main
