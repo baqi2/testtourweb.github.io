@@ -5,6 +5,8 @@ const translations = {
         nav: {
             home: "首页",
             about: "关于我们",
+            features: "我们的特色",
+            destinations: "热门目的地",
             projects: "项目介绍",
             testimonials: "客户评价",
             contact: "联系我们"
@@ -117,6 +119,8 @@ const translations = {
         nav: {
             home: "Home",
             about: "About",
+            features: "Features",
+            destinations: "Destinations",
             projects: "Projects",
             testimonials: "Testimonials",
             contact: "Contact"
@@ -229,6 +233,8 @@ const translations = {
         nav: {
             home: "ホーム",
             about: "会社概要",
+            features: "特徴",
+            destinations: "人気の目的地",
             projects: "プロジェクト",
             testimonials: "お客様の声",
             contact: "お問い合わせ"
@@ -341,6 +347,8 @@ const translations = {
         nav: {
             home: "Accueil",
             about: "À Propos",
+            features: "Caractéristiques",
+            destinations: "Destinations",
             projects: "Projets",
             testimonials: "Témoignages",
             contact: "Contact"
@@ -453,6 +461,8 @@ const translations = {
         nav: {
             home: "Inicio",
             about: "Sobre Nosotros",
+            features: "Características",
+            destinations: "Destinos",
             projects: "Proyectos",
             testimonials: "Testimonios",
             contact: "Contacto"

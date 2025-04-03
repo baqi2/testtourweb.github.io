@@ -1,3 +1,23 @@
+/* 颜色变量 */
+:root {
+    --primary-color: #FFA726; /* 主色调：橙色 */
+    --text-color: #333333; /* 主文本颜色 */
+    --text-light: #555555; /* 辅助文本颜色 */
+    --accent-color: #ff4d4d; /* 强调色：红色 */
+    --accent-hover: #ff6b6b; /* 强调色悬停 */
+    --bg-color: #E3F2FD; /* 背景色：浅蓝色 */
+    --card-bg: white; /* 卡片背景色 */
+    --shadow-light: rgba(0,0,0,0.1); /* 浅阴影 */
+    --shadow-medium: rgba(0,0,0,0.2); /* 中阴影 */
+    --shadow-dark: rgba(0,0,0,0.3); /* 深阴影 */
+    
+    /* 暗色主题变量 */
+    --dark-bg: #1a1a1a;
+    --dark-card: #2a2a2a;
+    --dark-text: #f0f0f0;
+    --dark-border: #444;
+}
+
 /* 全局样式 */
 * {
     margin: 0;
@@ -8,9 +28,9 @@
 body {
     font-family: 'Microsoft YaHei', sans-serif;
     line-height: 1.6;
-    color: #333333; /* 主文本颜色 */
+    color: var(--text-color);
     overflow-x: hidden;
-    background-color: #E3F2FD; /* 浅蓝色背景 */
+    background-color: var(--bg-color);
 }
 
 .container {
@@ -27,9 +47,9 @@ body {
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #E3F2FD; /* 不透明背景 */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    color: #333333; /* 导航栏文字颜色 */
+    background-color: var(--bg-color);
+    box-shadow: 0 2px 5px var(--shadow-light);
+    color: var(--text-color);
 }
 
 .tab-nav {
@@ -45,7 +65,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     padding: 10px 20px;
-    background: white;
+    background: var(--card-bg);
     width: 100%;
     height: 60px;
     position: relative;
@@ -59,7 +79,7 @@ body {
 .logo-text {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #333;
+    color: var(--text-color);
     margin: 0 15px;
 }
 
@@ -78,7 +98,7 @@ body {
     padding: 8px 30px 8px 12px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: white;
+    background-color: var(--card-bg);
     font-size: 14px;
     cursor: pointer;
     min-width: 100px;
@@ -86,6 +106,7 @@ body {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M2 4l4 4 4-4'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-position: right 8px center;
+    transition: border-color 0.3s ease;
 }
 
 .language-selector select:hover {
@@ -113,19 +134,27 @@ body {
     align-items: center;
     justify-content: center;
     padding: 1rem;
-    color: #852c2c; /* 确保字体颜色为白色 */
+    color: var(--accent-color); /* 使用强调色作为导航链接颜色 */
     text-decoration: none;
     text-align: center;
     transition: all 0.3s ease;
 }
 
 .tabs li a:hover {
-    background-color: rgba(169, 131, 131, 0.2); /* 鼠标悬停时的背景颜色 */
+    background-color: rgba(255, 77, 77, 0.1); /* 使用半透明的强调色作为悬停背景 */
 }
 
 .tabs li a:active {
-    background-color: rgba(255, 0, 0, 0.3); /* 鼠标点击时的背景颜色 */
-    color: #000000; /* 确保字体颜色为黑色 */
+    background-color: rgba(255, 77, 77, 0.2); /* 使用更深的强调色作为点击背景 */
+    color: var(--text-color); /* 使用主文本颜色 */
+}
+
+/* 活动标签样式 */
+.tabs li.active a {
+    background-color: rgba(255, 77, 77, 0.3); /* 使用更深的强调色作为活动标签背景 */
+    color: var(--text-color); /* 使用主文本颜色 */
+    font-weight: bold; /* 加粗文字 */
+    border-bottom: 2px solid var(--accent-color); /* 添加底部边框 */
 }
 
 .tabs li a i {
@@ -150,14 +179,18 @@ body {
 
 .banner-content {
     position: absolute;
-    top: 20%; /* 调整文字位置 */
+    top: 30%; /* 调整文字位置，更靠下一些 */
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: white;
     width: 90%;
-    max-width: 600px;
+    max-width: 800px; /* 增加最大宽度 */
     z-index: 2; /* 确保文字在图片上方 */
+    text-shadow: 0 2px 4px var(--shadow-dark); /* 添加文字阴影提高可读性 */
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.3); /* 添加半透明背景 */
+    border-radius: 10px; /* 圆角效果 */
 }
 
 /* 添加蒙层样式 */
@@ -167,7 +200,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.05); /* 半透明黑色蒙层 */
+    background: rgba(0, 0, 0, 0.2); /* 增加蒙层不透明度提高文字可读性 */
     z-index: 1; /* 确保蒙层在背景图上 */
 }
 
@@ -190,9 +223,15 @@ body {
     flex: 1; /* 使每个图片占据相同的空间 */
     overflow: hidden; /* 防止图片溢出 */
     border-radius: 8px; /* 圆角效果 */
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px var(--shadow-dark);
     perspective: 1000px; /* 3D 效果的透视 */
     transform: translateZ(-20px) rotateX(10deg); /* 初始状态下的3D效果，前后方向 */
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.banner-image:hover {
+    transform: translateZ(0) rotateX(0deg); /* 悬停时恢复正常视角 */
+    box-shadow: 0 8px 20px var(--shadow-dark);
 }
 
 .banner-image img {
@@ -210,22 +249,26 @@ body {
 .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 20px 0;
+    gap: 30px; /* 增加间距 */
+    padding: 40px 0; /* 增加上下间距 */
+    background-color: rgba(255, 255, 255, 0.8); /* 添加轻微背景色，与关于我们部分保持一致 */
+    border-radius: 15px; /* 圆角效果 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* 添加轻微阴影 */
+    margin: 20px 0; /* 添加上下外边距 */
 }
 
 .feature-card {
-    background: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--shadow-light);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .feature-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px var(--shadow-medium);
 }
 
 /* 目的地网格 */
@@ -237,16 +280,16 @@ body {
 }
 
 .destination-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .destination-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px var(--shadow-medium);
 }
 
 .destination-card img {
@@ -268,15 +311,16 @@ body {
 }
 
 .project-card {
-    background: white;
+    background: var(--card-bg);
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px var(--shadow-medium);
 }
 
 .project-card img {
@@ -294,16 +338,16 @@ body {
 }
 
 .testimonial-card {
-    background: white;
+    background: var(--card-bg);
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--shadow-light);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .testimonial-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    box-shadow: 0 4px 15px var(--shadow-medium);
 }
 
 .avatar {
@@ -333,6 +377,14 @@ body {
     border: 1px solid #ddd;
     border-radius: 4px;
     width: 100%;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 167, 38, 0.2);
 }
 
 .contact-form textarea {
@@ -358,8 +410,12 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
-    padding: 40px 0;
-    align-items: start;
+    padding: 60px 0; /* 增加上下间距 */
+    align-items: center; /* 垂直居中对齐 */
+    background-color: rgba(255, 255, 255, 0.8); /* 添加轻微背景色 */
+    border-radius: 15px; /* 圆角效果 */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05); /* 添加轻微阴影 */
+    margin: 20px 0; /* 添加上下外边距 */
 }
 
 .about-text {
@@ -667,37 +723,44 @@ footer {
 /* 暗色主题支持 */
 @media (prefers-color-scheme: dark) {
     body {
-        background-color: #1a1a1a;
-        color: #f0f0f0;
+        background-color: var(--dark-bg);
+        color: var(--dark-text);
     }
 
     .fixed-header,
     .logo {
-        background-color: #2a2a2a;
+        background-color: var(--dark-card);
     }
 
     .feature-card,
     .destination-card,
     .project-card,
     .testimonial-card {
-        background-color: #2a2a2a;
-        color: #f0f0f0;
+        background-color: var(--dark-card);
+        color: var(--dark-text);
+        box-shadow: 0 2px 10px rgba(0,0,0,0.3);
     }
 
     .contact-form input,
     .contact-form textarea,
     .language-selector select {
         background-color: #333;
-        color: #f0f0f0;
-        border-color: #444;
+        color: var(--dark-text);
+        border-color: var(--dark-border);
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+        border-color: var(--accent-hover);
+        box-shadow: 0 0 0 2px rgba(255, 107, 107, 0.3);
     }
 
     .stat-item {
-        background: #2a2a2a;
+        background: var(--dark-card);
     }
 
     .stat-number {
-        color: #ff6b6b;
+        color: var(--accent-hover);
     }
 
     .stat-label {
@@ -709,7 +772,7 @@ footer {
     }
 
     .cert-item i {
-        color: #ff6b6b;
+        color: var(--accent-hover);
     }
 
     .image-overlay {
@@ -717,7 +780,13 @@ footer {
     }
 
     .overlay-content i {
-        color: #ff6b6b;
+        color: var(--accent-hover);
+    }
+    
+    /* 改善暗色主题下的按钮可见性 */
+    .btn {
+        background-color: var(--accent-hover);
+        color: var(--dark-text);
     }
 }
 
@@ -738,6 +807,22 @@ footer {
 .project-card,
 .testimonial-card {
     animation: fadeIn 0.5s ease-out;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+    position: relative;
+    font-size: 2rem;
+}
+
+.section-subtitle {
+    text-align: center;
+    margin: 1.5rem 0;
+    color: var(--text-color);
+    position: relative;
+    font-size: 1.5rem;
 }
 
 /* 无障碍支持 */
@@ -787,16 +872,26 @@ footer {
 .sub-image:nth-child(3) { --animation-order: 3; }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #333333; /* 标题颜色 */
+    color: var(--text-color); /* 标题颜色 */
 }
 
 p {
-    color: #555555; /* 较浅的辅助文本颜色 */
+    color: var(--text-light); /* 较浅的辅助文本颜色 */
 }
 
 .btn {
-    background-color: #FFA726; /* 橙色按钮 */
+    background-color: var(--primary-color); /* 橙色按钮 */
     color: white; /* 按钮文字颜色 */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+    background-color: #FF9800; /* 稍深的橙色 */
+    transform: translateY(-2px);
 }
 
 a {
