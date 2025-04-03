@@ -318,6 +318,12 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project-card h3,
+.project-card p {
+    padding: 0 15px;
+    margin: 10px 0;
+}
+
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 4px 15px var(--shadow-medium);
@@ -429,6 +435,7 @@ footer {
     line-height: 1.8;
     color: #333;
     margin-bottom: 20px;
+    padding: 0 20px;
 }
 
 .about-stats {
